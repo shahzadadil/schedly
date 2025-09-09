@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Schedly", "Schedly\Schedly.csproj", "{BB38D210-8523-417C-896B-E7EB7C7029D8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Schedly.Examples", "Schedly.Examples\Schedly.Examples.csproj", "{C57285B7-C38E-4CDB-AA0C-F3E07CD54353}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Schedly.Tests", "Schedly.Tests\Schedly.Tests.csproj", "{B0D5CDB7-2CD0-4C53-BEC7-16C500E8CEE5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BB38D210-8523-417C-896B-E7EB7C7029D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB38D210-8523-417C-896B-E7EB7C7029D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB38D210-8523-417C-896B-E7EB7C7029D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB38D210-8523-417C-896B-E7EB7C7029D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C57285B7-C38E-4CDB-AA0C-F3E07CD54353}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C57285B7-C38E-4CDB-AA0C-F3E07CD54353}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C57285B7-C38E-4CDB-AA0C-F3E07CD54353}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C57285B7-C38E-4CDB-AA0C-F3E07CD54353}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0D5CDB7-2CD0-4C53-BEC7-16C500E8CEE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0D5CDB7-2CD0-4C53-BEC7-16C500E8CEE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0D5CDB7-2CD0-4C53-BEC7-16C500E8CEE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0D5CDB7-2CD0-4C53-BEC7-16C500E8CEE5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
