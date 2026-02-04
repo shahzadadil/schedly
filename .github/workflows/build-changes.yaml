@@ -26,6 +26,12 @@ jobs:
         with:
           dotnet-version: '8.0.x'
 
+      - name: List files and directories
+        run: |
+          echo "Listing files and directories in the repository:"
+          ls -R
+          echo "Current working directory: $(pwd)" 
+
       - name: Restore
         run: |
           dotnet restore "**/Schedly.Core.csproj"
