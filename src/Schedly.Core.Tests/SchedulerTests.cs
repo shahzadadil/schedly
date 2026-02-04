@@ -20,7 +20,7 @@ public class HostedSchedulerTests
 
     public HostedSchedulerTests()
     {
-        _jobMock = new Mock<SampleJob>(NullLogger<SampleJob>.Instance);
+        _jobMock = new Mock<SampleJob>(NullLogger<SampleJob>.Instance, new FakeTimeProvider());
 
         var services = new ServiceCollection();
         _ = services.AddSingleton<Job>(_jobMock.Object);
@@ -69,7 +69,7 @@ public class HostedSchedulerTests
     public async Task Should_Complete_Gracefully_When_No_Jobs_To_Execute()
     {
         // Arrange
-        var emptyJobMock = new Mock<SampleJob>(NullLogger<SampleJob>.Instance);
+        var emptyJobMock = new Mock<SampleJob>(NullLogger<SampleJob>.Instance, new FakeTimeProvider());
         var services = new ServiceCollection();
         _ = services.AddSingleton<Job>(emptyJobMock.Object);
         var emptyServiceProvider = services.BuildServiceProvider();

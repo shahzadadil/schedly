@@ -4,6 +4,12 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+	  <Version>1.0.0</Version>
+	  <Authors>Schedly</Authors>
+	  <Company>Schedly</Company>
+	  <Description>Schedule jobs easily with minimal setup</Description>
+	  <RepositoryUrl>https://github.com/shahzadadil/schedly</RepositoryUrl>
+	  <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>

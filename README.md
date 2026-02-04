@@ -24,14 +24,14 @@ The abstract `Job` class provides the base functionality for creating scheduled 
 - Register the scheduler in tha app startup. You need to pass the assemblies where the jobs are defined. The scheduler will only schedule jobs from those assemblies.
 
     ```csharp
-    builder.Services.ScheduleAllJobsFromSpecifiedAssemblies(new[] { typeof(RepublishFailedMessagesJob).Assembly });
+    builder.Services.ScheduleAllJobsFromSpecifiedAssemblies(new[] { typeof(SampleJob).Assembly });
     ```
 
 ## Sample Jobs
 Two sample jobs, `SampleJob` and `SampleJob1`, demonstrate how to implement the `Job` class.
 
 ### SampleJob
-- Executes every 10 seconds.
+- Executes every 1 minute.
 - Does not run on application startup.
 
 ```csharp
@@ -43,7 +43,7 @@ public class SampleJob : Job
 
     protected override string Name => nameof(SampleJob);
 
-    protected override JobExecutionOptions Options => new() { ExecutionInterval = TimeSpan.FromSeconds(10) };
+    protected override JobExecutionOptions Options => new() { ExecutionInterval = TimeSpan.FromMinutes(1) };
 
     protected override async Task OnExecute()
     {

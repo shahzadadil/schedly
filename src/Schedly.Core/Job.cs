@@ -6,8 +6,8 @@ public abstract class Job(
     ILogger<Job> _logger,
     TimeProvider _timeProvider)
 {
-    private DateTime? _lastExecutedAt = null;
-    private readonly DateTime _createdAt = _timeProvider.GetUtcNow().DateTime;
+    private DateTimeOffset? _lastExecutedAt = null;
+    private readonly DateTimeOffset _createdAt = _timeProvider.GetUtcNow();
 
     private TimeSpan TimeElapsedSinceCreation => _timeProvider.GetUtcNow() - _createdAt;
     private TimeSpan TimeElapsedSinceLastExecution => _lastExecutedAt.HasValue ? _timeProvider.GetUtcNow() - _lastExecutedAt.Value : TimeSpan.MaxValue;
@@ -29,7 +29,7 @@ public abstract class Job(
 
     public virtual async Task Execute()
     {
-        _lastExecutedAt = DateTime.UtcNow;
+        _lastExecutedAt = _timeProvider.GetUtcNow();
 
         _logger.LogInformation("Executing {Name} at {ExecutionTime}", Name, _lastExecutedAt);
 

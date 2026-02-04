@@ -1,11 +1,13 @@
-﻿namespace Schedly.Core.Tests;
+﻿namespace ConsoleApp;
 
 using Microsoft.Extensions.Logging;
+
+using Schedly.Core;
 
 using System;
 using System.Threading.Tasks;
 
-public class SampleJob(ILogger<SampleJob> logger) : Job(logger)
+internal class SampleJob(ILogger<SampleJob> _logger, TimeProvider _timeProvider) : Job(_logger, _timeProvider)
 {
     protected override JobExecutionOptions Options => new()
     {
