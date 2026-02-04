@@ -29,16 +29,16 @@ jobs:
       - name: List files and directories
         run: |
           echo "Listing files and directories in the repository:"
-          ls -R
+          ls
           echo "Current working directory: $(pwd)" 
 
       - name: Restore
         run: |
-          dotnet restore "**/Schedly.Core.csproj"
+          dotnet restore "src/Schedly.Core/Schedly.Core.csproj"
 
       - name: Build
         run: |
-          dotnet build "**/Schedly.Core.csproj" --no-restore --configuration Release
+          dotnet build "src/Schedly.Core/Schedly.Core.csproj" --no-restore --configuration Release
       - name: Test
         run: |
-          dotnet test "**/Schedly.Core.Tests.csproj" --no-build --configuration Release --logger "trx;LogFileName=test-results.trx"
+          dotnet test "src/Schedly.Core.Tests/Schedly.Core.Tests.csproj" --no-build --configuration Release --logger "trx;LogFileName=test-results.trx"
