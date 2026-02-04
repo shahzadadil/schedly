@@ -28,12 +28,11 @@ jobs:
 
       - name: Restore
         run: |
-          dotnet restore "./Schedly.Core/Schedly.Core.csproj"
+          dotnet restore "**/Schedly.Core.csproj"
 
       - name: Build
         run: |
-          dotnet build "./Schedly.Core/Schedly.Core.csproj" --no-restore --configuration Release
-
+          dotnet build "**/Schedly.Core.csproj" --no-restore --configuration Release
       - name: Test
         run: |
-          dotnet test "./tests/Schedly.Core.Tests/Schedly.Core.Tests.csproj" --no-build --configuration Release --logger "trx;LogFileName=test-results.trx"
+          dotnet test "**/Schedly.Core.Tests.csproj" --no-build --configuration Release --logger "trx;LogFileName=test-results.trx"
