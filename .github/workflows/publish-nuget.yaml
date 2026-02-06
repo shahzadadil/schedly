@@ -24,12 +24,12 @@ jobs:
 
       - name: Test
         run: |
-          dotnet test "./tests/Schedly.Core.Tests/Schedly.Core.Tests.csproj" --configuration Release --logger "trx;LogFileName=test-results.trx"
+          dotnet test "src/Schedly.Core.Tests/Schedly.Core.Tests.csproj" --configuration Release --logger "trx;LogFileName=test-results.trx"
 
       - name: Pack Schedly Nuget
         run: |
           mkdir -p ./artifacts
-          dotnet pack "./Schedly.Core/Schedly.Core.csproj" -c Release -o ./artifacts
+          dotnet pack "src/Schedly.Core/Schedly.Core.csproj" -c Release -o ./artifacts
 
       - name: Push to NuGet.org
         env:
