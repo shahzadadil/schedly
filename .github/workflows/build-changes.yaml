@@ -31,14 +31,7 @@ jobs:
           echo "Listing files and directories in the repository:"
           ls
           echo "Current working directory: $(pwd)" 
-
-      - name: Restore
-        run: |
-          dotnet restore "src/Schedly.Core/Schedly.Core.csproj"
-
-      - name: Build
-        run: |
-          dotnet build "src/Schedly.Core/Schedly.Core.csproj" --no-restore --configuration Release
+          
       - name: Test
         run: |
-          dotnet test "src/Schedly.Core.Tests/Schedly.Core.Tests.csproj" --no-build --configuration Release --logger "trx;LogFileName=test-results.trx"
+          dotnet test "src/Schedly.Core.Tests/Schedly.Core.Tests.csproj" --configuration Release --logger "trx;LogFileName=test-results.trx"
